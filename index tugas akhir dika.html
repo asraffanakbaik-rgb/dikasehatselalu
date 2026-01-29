@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siaga Bencana | Panduan Kesiapsiagaan dan Mitigasi Bencana Alam</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Slate 50 */
+        }
+        .header-bg {
+            background-color: #ef4444; /* Red 500 */
+            background-image: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); /* Gradien Merah */
+        }
+        .btn-primary {
+            background-color: #f97316; /* Orange 500 */
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #ea580c; /* Orange 600 */
+        }
+        .card-shadow {
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        .card-shadow:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hazard': '#ef4444',
+                        'safety': '#10b981',
+                        'urgent': '#f97316',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-3">
+                    <i data-lucide="sirens" class="h-8 w-8 text-hazard"></i>
+                    <span class="text-xl font-extrabold text-gray-900">SIAGA BENCANA</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#jenis" class="text-gray-600 hover:text-hazard font-medium transition">Jenis Bencana</a>
+                    <a href="#mitigasi" class="text-gray-600 hover:text-hazard font-medium transition">Kesiapsiagaan</a>
+                    <a href="#darurat" class="text-gray-600 hover:text-hazard font-medium transition">Kontak Darurat</a>
+                </div>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex">
+                    <a href="#darurat" class="btn-primary text-white px-5 py-2 rounded-full font-semibold shadow-lg shadow-orange-500/30">
+                        Cek Nomor Penting
+                    </a>
+                </div>
+
+                <!-- Mobile Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-hazard">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 space-y-3 shadow-lg">
+            <a href="#jenis" class="block text-gray-600 hover:text-hazard font-medium">Jenis Bencana</a>
+            <a href="#mitigasi" class="block text-gray-600 hover:text-hazard font-medium">Kesiapsiagaan</a>
+            <a href="#darurat" class="block text-gray-600 hover:text-hazard font-medium">Kontak Darurat</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="header-bg text-white py-20 lg:py-32 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl lg:text-6xl font-extrabold mb-4 leading-tight">
+                INDONESIA NEGERI BENCANA
+            </h1>
+            <p class="text-xl lg:text-2xl font-medium mb-8 max-w-3xl mx-auto opacity-90">
+                Pahami risiko, tingkatkan kesiapsiagaan, dan selamatkan diri serta keluarga Anda dari ancaman Bencana Alam.
+            </p>
+            
+            <a href="#mitigasi" class="inline-flex items-center space-x-2 btn-primary text-white px-8 py-3 rounded-xl font-bold text-lg shadow-xl shadow-orange-500/40 hover:scale-[1.05] transition duration-300">
+                <i data-lucide="shield-check" class="h-6 w-6"></i>
+                <span>LANGKAH MITIGASI</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Jenis Bencana Section -->
+    <section id="jenis" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Mengenal Jenis-Jenis Bencana</h2>
+                <p class="text-gray-500 mt-2">Indonesia rawan terhadap berbagai ancaman. Kenali ciri-cirinya.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card Gempa Bumi -->
+                <div class="bg-white rounded-xl p-6 card-shadow border-t-4 border-yellow-500">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i data-lucide="alert-triangle" class="h-8 w-8 text-yellow-600"></i>
+                        <h3 class="text-xl font-bold text-gray-900">Gempa Bumi</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">Guncangan tiba-tiba di permukaan bumi akibat pelepasan energi di bawah permukaan. Waspadai Tsunami jika terjadi di dasar laut dengan kekuatan besar.</p>
+                    <a href="#" class="inline-block mt-4 text-urgent font-medium text-sm hover:underline">Pelajari Tindakan ></a>
+                </div>
+
+                <!-- Card Banjir -->
+                <div class="bg-white rounded-xl p-6 card-shadow border-t-4 border-blue-500">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i data-lucide="cloud-rain" class="h-8 w-8 text-blue-600"></i>
+                        <h3 class="text-xl font-bold text-gray-900">Banjir</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">Keadaan di mana suatu daerah terendam air dalam jumlah besar. Sering terjadi akibat curah hujan tinggi, tanggul jebol, atau kiriman air dari hulu.</p>
+                    <a href="#" class="inline-block mt-4 text-urgent font-medium text-sm hover:underline">Pelajari Tindakan ></a>
+                </div>
+
+                <!-- Card Erupsi Gunung Api -->
+                <div class="bg-white rounded-xl p-6 card-shadow border-t-4 border-red-500">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i data-lucide="mountain" class="h-8 w-8 text-red-600"></i>
+                        <h3 class="text-xl font-bold text-gray-900">Erupsi Gunung Api</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">Letusan gunung berapi yang mengeluarkan material seperti lava, gas panas, dan abu. Kenali jalur evakuasi dan radius bahaya di sekitar gunung.</p>
+                    <a href="#" class="inline-block mt-4 text-urgent font-medium text-sm hover:underline">Pelajari Tindakan ></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mitigasi Section -->
+    <section id="mitigasi" class="py-16 lg:py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Kesiapsiagaan dan Mitigasi</h2>
+                <p class="text-gray-500 mt-2">Tindakan pencegahan dan kesiapan adalah kunci keselamatan.</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto space-y-8">
+                <!-- Mitigasi 1: Tas Siaga Bencana -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-safety flex flex-col md:flex-row items-start md:items-center card-shadow">
+                    <div class="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
+                        <i data-lucide="backpack" class="h-10 w-10 text-safety"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">1. Siapkan Tas Siaga Bencana (TSB)</h3>
+                        <p class="text-gray-600">Ini adalah tas ransel berisi kebutuhan primer yang dapat menopang hidup Anda selama minimal 3 hari (72 jam) pasca-bencana.</p>
+                        <ul class="list-disc list-inside text-sm text-gray-600 mt-2 ml-4">
+                            <li>Air minum dan makanan siap saji.</li>
+                            <li>Obat-obatan pribadi dan P3K.</li>
+                            <li>Senter, radio, dan baterai cadangan.</li>
+                            <li>Surat/dokumen penting (Fotokopi).</li>
+                            <li>Peluit dan uang tunai secukupnya.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mitigasi 2: Rencana Keluarga -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-safety flex flex-col md:flex-row items-start md:items-center card-shadow">
+                    <div class="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
+                        <i data-lucide="users" class="h-10 w-10 text-safety"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">2. Buat Rencana Darurat Keluarga</h3>
+                        <p class="text-gray-600">Diskusikan dengan keluarga mengenai titik kumpul (Evacuation Point) yang aman dan jalur evakuasi di rumah Anda.</p>
+                        <ul class="list-disc list-inside text-sm text-gray-600 mt-2 ml-4">
+                            <li>Tentukan dua titik kumpul (dekat dan jauh dari rumah).</li>
+                            <li>Latihan mematikan listrik, gas, dan air jika terjadi bencana.</li>
+                            <li>Simulasi jalur evakuasi keluar dari rumah.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mitigasi 3: Informasi dan Latihan -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-safety flex flex-col md:flex-row items-start md:items-center card-shadow">
+                    <div class="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
+                        <i data-lucide="message-square-text" class="h-10 w-10 text-safety"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">3. Selalu Update Informasi dan Ikuti Latihan</h3>
+                        <p class="text-gray-600">Ikuti informasi resmi dari BMKG (untuk gempa/cuaca) dan PVMBG (untuk gunung api).</p>
+                        <ul class="list-disc list-inside text-sm text-gray-600 mt-2 ml-4">
+                            <li>Pahami prosedur evakuasi dari kantor atau sekolah.</li>
+                            <li>Ikuti latihan/simulasi bencana yang diadakan pemerintah daerah.</li>
+                            <li>Tingkatkan pengetahuan tentang pertolongan pertama (P3K).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Darurat Section -->
+    <section id="darurat" class="py-16 lg:py-24 header-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">NOMOR TELEPON DARURAT</h2>
+            <p class="text-lg mb-10 opacity-90">Simpan nomor ini di ponsel Anda sekarang juga.</p>
+
+            <div class="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <!-- Darurat 1 -->
+                <div class="bg-white text-gray-800 p-5 rounded-xl card-shadow">
+                    <i data-lucide="phone-call" class="h-8 w-8 text-hazard mb-2 mx-auto"></i>
+                    <p class="font-bold text-xl">112</p>
+                    <p class="text-sm text-gray-500">Panggilan Darurat Umum</p>
+                </div>
+                
+                <!-- Darurat 2 -->
+                <div class="bg-white text-gray-800 p-5 rounded-xl card-shadow">
+                    <i data-lucide="hospital" class="h-8 w-8 text-hazard mb-2 mx-auto"></i>
+                    <p class="font-bold text-xl">118/119</p>
+                    <p class="text-sm text-gray-500">Ambulans / Kesehatan</p>
+                </div>
+
+                <!-- Darurat 3 -->
+                <div class="bg-white text-gray-800 p-5 rounded-xl card-shadow">
+                    <i data-lucide="flame" class="h-8 w-8 text-hazard mb-2 mx-auto"></i>
+                    <p class="font-bold text-xl">113</p>
+                    <p class="text-sm text-gray-500">Pemadam Kebakaran</p>
+                </div>
+
+                <!-- Darurat 4 -->
+                <div class="bg-white text-gray-800 p-5 rounded-xl card-shadow">
+                    <i data-lucide="home" class="h-8 w-8 text-hazard mb-2 mx-auto"></i>
+                    <p class="font-bold text-xl">115</p>
+                    <p class="text-sm text-gray-500">BASARNAS / SAR</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm text-gray-400">&copy; 2025 Siaga Bencana. | Situs ini dibuat untuk tujuan edukasi dan kesiapsiagaan.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click (for smooth scrolling)
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+    </script>
+</body>
+</html>
